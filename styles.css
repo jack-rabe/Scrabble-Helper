@@ -9,18 +9,18 @@
     width: 100%;
     display: grid;
     justify-content: center;
+    align-content: center;
     grid-template-rows: repeat(15, 30px);
     grid-template-columns: repeat(15, 30px);
     background-color: black;
 }
 
-
-p {
+input {
     width: 25px;
     height: 25px;
     text-align: center;
     background-color: white;
     padding: none;
-    border-width: 10px;
-    border-color: red;
+    border-width: 5px;
+    border-color: black;
 }

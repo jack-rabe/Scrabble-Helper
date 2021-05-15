@@ -2,6 +2,9 @@
 
 <head>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://jakeballz.com/api/css/jack">
+    <script type="text/javascript" src="https://jakeballz.com/api/js/scrabble"></script>
+    <script type="text/javascript" src="https://jakeballz.com/api/js/scrabble-words"></script>
     <title>Scrabble Helper</title>
     <meta charset="utf-8">
 </head> 
@@ -24,7 +27,7 @@
     function addTags() {
         let board = document.getElementById("scrabble-board");
         const tripleWordTiles = [0, 7, 14, 210, 217, 224];
-        const doubleLetterTiles = [3, 11, 36, 38, 45, 52, 59, 172, 186, 188, 213, 221];
+        const doubleLetterTiles = [3, 11, 36, 38, 45, 52, 59, 172, 186, 165, 188, 194, 213, 221];
         let allTags = "";
         let style = "";
         for (let i = 0; i < 225; i++){

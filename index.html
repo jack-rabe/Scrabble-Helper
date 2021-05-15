@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://jakeballz.com/api/css/scrabble">
     <script type="text/javascript" src="https://jakeballz.com/api/js/scrabble"></script>
     <script type="text/javascript" async src="https://jakeballz.com/api/js/scrabble-words"></script>
     <title>Scrabble Helper</title>
     <meta charset="utf-8">
-</head> 
+</head>
 
 <body onload="loaded()">
-<h1 id="scrabble-title">Scrabble Helper</h1>
-<div id="scrabble-board"></div>
-<button onclick="solve()">Solve</button>
-<input id="hand" type="text"></input>
+    <h1 id="scrabble-title">Scrabble Helper</h1>
+    <div id="scrabble-board"></div>
+    <button onclick="solve()">Solve</button>
+    <input id="hand" type="text"></input>
 
-<script>
-    function loaded() {
-        addTags();
-    }
-
-    function checkForOneLetter(id){
-        let element = document.getElementById(id);
-        element.value =   element.value.charAt(element.value.length - 1);
-    }
-
-    function addTags() {
-        let board = document.getElementById("scrabble-board");
-        const centerTile = 112;
-        const tripleWordTiles = [0, 7, 14, 210, 217, 224];
-        const tripleLetterTiles = [20, 24, 76, 80, 84, 88, 136, 140, 144, 148, 200, 204];
-        const doubleWordTiles = [16, 28, 32, 42, 48, 56, 64, 70, 154, 160, 176, 168, 172, 182, 192, 196, 208];
-        const doubleLetterTiles = [3, 11, 36, 38, 45, 52, 59, 92, 96, 98, 102, 108, 116, 122, 126, 128, 132, 172, 179, 186, 165, 188, 213, 221];
-        let allTags = "";
-        let style = "";
-        for (let i = 0; i < 225; i++){
-
-            if (tripleWordTiles.indexOf(i) !== -1){ style = "\"background-color: red;\""; }
-            else if (tripleLetterTiles.indexOf(i) !== -1){ style = "\"background-color: green;\""; }
-            else if (doubleLetterTiles.indexOf(i) !== -1){ style = "\"background-color: yellow;\""; }
-            else if (doubleWordTiles.indexOf(i) !== -1) { style = "\"background-color: pink;\""; }
-            else if (i === centerTile){ style = "\"background-color: orange;\""; }
-            else{
-                style = "";
-            }
-
-            allTags += `<input style=${style} id=${i} type=\"text\" tabindex=\"1\" onchange="checkForOneLetter(${i})"></input>`;
+    <script>
+        function loaded() {
+            addTags();
         }
-        board.innerHTML = allTags;
-    }
-</script>
+
+        function checkForOneLetter(id) {
+            let element = document.getElementById(id);
+            if (element) {
+                element.value = element.value.charAt(element.value.length - 1);
+            }
+        }
+
+        function addTags() {
+            let board = document.getElementById("scrabble-board");
+            const centerTile = 112;
+            const tripleWordTiles = [0, 7, 14, 210, 217, 224];
+            const tripleLetterTiles = [20, 24, 76, 80, 84, 88, 136, 140, 144, 148, 200, 204];
+            const doubleWordTiles = [16, 28, 32, 42, 48, 56, 64, 70, 154, 160, 176, 168, 172, 182, 192, 196, 208];
+            const doubleLetterTiles = [3, 11, 36, 38, 45, 52, 59, 92, 96, 98, 102, 108, 116, 122, 126, 128, 132, 172, 179, 186, 165, 188, 213, 221];
+            let allTags = "";
+            let style = "";
+            for (let i = 0; i < 225; i++) {
+
+                if (tripleWordTiles.indexOf(i) !== -1) { style = "\"background-color: red;\""; }
+                else if (tripleLetterTiles.indexOf(i) !== -1) { style = "\"background-color: green;\""; }
+                else if (doubleLetterTiles.indexOf(i) !== -1) { style = "\"background-color: yellow;\""; }
+                else if (doubleWordTiles.indexOf(i) !== -1) { style = "\"background-color: pink;\""; }
+                else if (i === centerTile) { style = "\"background-color: orange;\""; }
+                else {
+                    style = "\"background-color: white;\"";;
+                }
+
+                allTags += `<input style=${style} id=${i} type=\"text\" tabindex=\"1\" onchange="checkForOneLetter(${i})"></input>`;
+            }
+            board.innerHTML = allTags;
+        }
+    </script>
 
 </body>

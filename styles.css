@@ -1,0 +1,26 @@
+#scrabble-title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#scrabble-board{
+    height: 675px;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(15, 30px);
+    grid-template-columns: repeat(15, 30px);
+    background-color: black;
+}
+
+
+p {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: white;
+    padding: none;
+    border-width: 10px;
+    border-color: red;
+}

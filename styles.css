@@ -4,9 +4,17 @@
     text-align: center;
 }
 
-#scrabble-board{
+html{
+    background-color: gray;
+}
+
+#main-content { /* The container for the board, reference boxes, solve button, and hand input box */
+    display: flex;
+}
+
+#scrabble-board{ /* The grid containing all input boxes that comprise the scrabble board*/
     height: 675px;
-    width: 100%;
+    width: 90%;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -15,12 +23,50 @@
     background-color: black;
 }
 
-input {
+input { /* The elements inside of the scrabble board */
     width: 25px;
     height: 25px;
     text-align: center;
+    text-justify: center;
     background-color: white;
     padding: none;
     border-width: 5px;
     border-color: black;
+}
+
+.point-reference{ /* The reference table that displays point values for all of the letters */
+    height: 0px;
+    display: grid;
+    grid-template-rows: repeat(13, 40px);
+    grid-template-columns: repeat(2, 40px);
+    gap: 5px;
+    margin: 20px;
+}
+
+
+p{  /* The elements inside of the point reference tables */
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    background-color: black;
+    color: white;
+
+}
+
+#solve-button {
+    width: 100px;
+    height: 30px;
+    align-self: center;
+    position: relative;
+    top: 305px;
+    right: 220px;
+    font-weight: bold;
+}
+
+#hand {
+    position: absolute;
+    top: 708px;
+    right: 100px;
+    width: 100px;
+    border-width: 1px;
 }

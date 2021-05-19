@@ -70,3 +70,12 @@ p{  /* The elements inside of the point reference tables */
     width: 100px;
     border-width: 1px;
 }
+
+.best-words {
+    background-color:black;
+    color: white;
+    font-size: 18px;
+    margin: 20px;
+    max-width: 100px;
+    text-align: center;
+}

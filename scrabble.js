@@ -11,10 +11,18 @@ function solve() {
     board = getLetters(board); //fill in the letters from the user
 
     let hand = document.getElementById("hand").value.toLowerCase();
+    
+    getPossibleWords(hand);
 
-    let possibleWords = getPossibleWords(hand);
+    addTopWordsToTags();
 }
 
+function addTopWordsToTags(){
+    const bestWordTags = document.getElementsByClassName("best-words");
+    for (const tag of bestWordTags){
+        tag.innerHTML = "word here";  // TODO add logic to get the actual top three words here
+    }
+}
 
 function getLetters(board) {
     let i = 0;
@@ -61,7 +69,7 @@ function createList(start, otherLetters, allWords) {
         }
         
         if (remaining.length != 0) {  // not a complete word, but letters still remain
-            createList(start, otherLetters2, allWords);
+            createList(start, remaining, allWords);
         }
     }
 }
@@ -126,7 +134,6 @@ function calcWord(word) { //get point values of a word
 
 function sortWords(words, oldPointArray, pointArray) {
     let sortedWords = new Array();
-    console.log("hi")
     for (let i = 0; i < words.length; i++) {
         let index = oldPointArray.indexOf(pointArray[i]);
 

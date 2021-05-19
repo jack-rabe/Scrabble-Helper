@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="https://jakeballz.com/api/css/scrabble">
-    <!--<link rel="stylesheet" href="styles.css">  remove this temporary-->
-    <script type="text/javascript" src="https://jakeballz.com/api/js/scrabble"></script>
+    <!--<link rel="stylesheet" href="https://jakeballz.com/api/css/scrabble">-->
+    <link rel="stylesheet" href="styles.css">
+    <!--<script type="text/javascript" src="https://jakeballz.com/api/js/scrabble"></script>-->
+    <script type="text/javascript" src="scrabble.js"></script>
     <script type="text/javascript" async src="https://jakeballz.com/api/js/getwordlist"></script>
     <title>Scrabble Helper</title>
     <meta charset="utf-8">
@@ -18,7 +19,13 @@
         <button id="solve-button" onclick="solve()">Solve</button>
         <input id="hand" type="text"></input>
     </div>
+    <ol>
+        <li class="best-words"></li>
+        <li class="best-words"></li>
+        <li class="best-words"></li>
+    </ol>
 
+    
     <script>
         function loaded() {
             addTags();

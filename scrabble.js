@@ -137,13 +137,13 @@ function calcWord(word) { //get point values of a word
     return totalPoints;
 }
 
-function sortWords(words, oldPointArray, pointArray) {
+function sortWords(words, oldPointArray, SortedpointArray) {
     let sortedWords = new Array();
     for (let i = 0; i < words.length; i++) {
-        let index = oldPointArray.indexOf(pointArray[i]);
-        console.log(index);
-        oldPointArray.splice(index, 1);
+        let index = oldPointArray.indexOf(SortedpointArray[i]);
         sortedWords.push(words[index]);
+        oldPointArray.splice(index, 1);
+        words.splice(index, 1);
     }
 
     return sortedWords;
@@ -153,7 +153,7 @@ function checkDone() {
     let watch = document.getElementById("watch");
     let num = parseInt(watch.innerHTML);
 
-    if ((running == true) && (num == 0)) {
+    if ((running) && (num == 0)) {
         running = false;
         let possible2 = calcPoints(possible);  // sort the words in descending point order
         addTopWordsToTags(possible2);

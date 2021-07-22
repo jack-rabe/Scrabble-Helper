@@ -85,7 +85,7 @@ function createList(start, otherLetters, allWords) {
             watch.innerHTML = (parseInt(watch.innerHTML) + 1);
             createList(start, remaining, allWords);
         }
-        
+
         if (i == (otherLetters.length - 1)) {
             watch.innerHTML = (parseInt(watch.innerHTML) - 1);
             checkDone();
